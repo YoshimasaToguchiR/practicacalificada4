@@ -1,27 +1,36 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using practicacalificada4.Data;
+using practicacalificada4.Models;
 
 namespace practicacalificada4.Controllers
 {
     public class GestionController : Controller
     {
         private readonly UsuarioContext _context;
-        public GestionController(UsuarioContext u)
+        public GestionController(UsuarioContext c)
         {
-            _context = u;
+            _context = c;
         }
 
+        public IActionResult RegistrarUsuario()
+        {
+          //TODO: Implement Realistic Implementation
+          return View();
+        }
         [HttpPost]
-        public IActionResult RegistrarTipoMascota(TipoMascota tm)
+        public IActionResult RegistrarUsuario(RegistroUsuario ru)
         {
           //TODO: Implement Realistic Implementation
           if (ModelState.IsValid){
-              _context.Add(tm);
-              _context.SaveChanges();
-              return RedirectToAction("ListaTipoMascotas");
+                _context.Add(ru);
+                _context.SaveChanges();
+              return RedirectToAction("Index");
           }
-          return View(tm);
+          return View(ru);
           
         }
+
+        
     }
 }
