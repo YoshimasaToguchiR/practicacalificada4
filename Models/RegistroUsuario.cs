@@ -10,7 +10,7 @@ namespace practicacalificada4.Models
         [Required]
         public string Nombre{get;set;}
 
-        public string Apellido{get;set;}
+        public string Apellidos{get;set;}
 
         public string Correo{get;set;}
 

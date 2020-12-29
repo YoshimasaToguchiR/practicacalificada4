@@ -31,6 +31,12 @@ namespace practicacalificada4.Controllers
           
         }
 
+        public IActionResult IniciarSesion()
+        {
+          //TODO: Implement Realistic Implementation
+          return View();
+        }
+
         
     }
 }
