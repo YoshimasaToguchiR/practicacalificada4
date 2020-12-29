@@ -7,8 +7,9 @@ namespace practicacalificada4.Data
     {
         public DbSet<Usuario> Usuarios {get;set;}
 
+        public DbSet<RegistroUsuario> RegistroUsuarios  {get;set;}
 
-        public UsuarioContext(DbContextOptions dco): base (dco){
+        public UsuarioContext(DbContextOptions dco): base(dco){
 
         }
     }

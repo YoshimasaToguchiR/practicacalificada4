@@ -16,6 +16,9 @@ namespace practicacalificada4.Models
         [EmailAddress]
         public string Correo{get;set;}
 
+        public RegistroUsuario Tipo { get; set; }
+
+        public int? TRegistroUsuarioId { get; set; }
 
     }
 }

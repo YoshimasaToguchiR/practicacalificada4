@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace practicacalificada4.Models
@@ -14,5 +15,7 @@ namespace practicacalificada4.Models
         public string Correo{get;set;}
 
         public string Contraseña{get;set;}
+
+        public ICollection<Usuario> Usuarios {get;set;}
     }
 }

@@ -13,13 +13,13 @@ namespace practicacalificada4.Controllers
             _context = c;
         }
 
-        public IActionResult RegistrarUsuario()
+        public IActionResult RegistroUsuario()
         {
           //TODO: Implement Realistic Implementation
           return View();
         }
         [HttpPost]
-        public IActionResult RegistrarUsuario(RegistroUsuario ru)
+        public IActionResult RegistroUsuario(RegistroUsuario ru)
         {
           //TODO: Implement Realistic Implementation
           if (ModelState.IsValid){
