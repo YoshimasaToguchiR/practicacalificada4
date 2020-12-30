@@ -26,6 +26,11 @@ namespace practicacalificada4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<UsuarioContext>()
+            .AddDefaultTokenProviders();
+            
             services.AddDbContext<UsuarioContext>(x => x.UseSqlServer("Server=.;Database=UsuarioDB;Integrated Security=true;"));
 
         }
@@ -48,7 +53,12 @@ namespace practicacalificada4
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            
+
 
             app.UseEndpoints(endpoints =>
             {

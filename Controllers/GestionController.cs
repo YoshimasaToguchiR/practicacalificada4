@@ -37,6 +37,9 @@ namespace practicacalificada4.Controllers
           return View();
         }
 
+        public IActionResult SubirFails(){
+          return View();
+        }
         
     }
 }
