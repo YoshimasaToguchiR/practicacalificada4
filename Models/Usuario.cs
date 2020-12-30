@@ -22,7 +22,7 @@ namespace practicacalificada4.Models
 
         public RegistroUsuario Tipo { get; set; }
 
-        public int? TRegistroUsuarioId { get; set; }
+        public int? RegistroFailId { get; set; }
 
     }
 }

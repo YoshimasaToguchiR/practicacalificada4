@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace practicacalificada4.Data
 {
-    public class UsuarioContext : IdentityDbContext
+    public class UsuarioContext : DbContext
     {
-        public DbSet<Usuario> Usuarios {get;set;}
+        public DbSet<Usuario> Usuario {get;set;}
 
-        public DbSet<RegistroUsuario> RegistroUsuarios  {get;set;}
+        public DbSet<RegistroUsuario> RegistroUsuario  {get;set;}
 
         public UsuarioContext(DbContextOptions dco): base(dco){
 
