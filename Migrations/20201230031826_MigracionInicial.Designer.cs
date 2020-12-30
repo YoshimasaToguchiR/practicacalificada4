@@ -10,8 +10,8 @@ using practicacalificada4.Data;
 namespace practicacalificada4.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20201229235352_Migracion")]
-    partial class Migracion
+    [Migration("20201230031826_MigracionInicial")]
+    partial class MigracionInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,29 +21,22 @@ namespace practicacalificada4.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("practicacalificada4.Models.RegistroUsuario", b =>
+            modelBuilder.Entity("practicacalificada4.Models.Fail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Apellidos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Contraseña")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Correo")
+                    b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegistroUsuarios");
+                    b.ToTable("Fails");
                 });
 
             modelBuilder.Entity("practicacalificada4.Models.Usuario", b =>
@@ -64,33 +57,30 @@ namespace practicacalificada4.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("FailId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TRegistroUsuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TipoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("TipoId");
+                    b.HasIndex("FailId");
 
                     b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("practicacalificada4.Models.Usuario", b =>
                 {
-                    b.HasOne("practicacalificada4.Models.RegistroUsuario", "Tipo")
+                    b.HasOne("practicacalificada4.Models.Fail", "Fails")
                         .WithMany("Usuarios")
-                        .HasForeignKey("TipoId");
+                        .HasForeignKey("FailId");
 
-                    b.Navigation("Tipo");
+                    b.Navigation("Fails");
                 });
 
-            modelBuilder.Entity("practicacalificada4.Models.RegistroUsuario", b =>
+            modelBuilder.Entity("practicacalificada4.Models.Fail", b =>
                 {
                     b.Navigation("Usuarios");
                 });
