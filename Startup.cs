@@ -27,6 +27,9 @@ namespace practicacalificada4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<UsuarioContext>()
+                    .AddDefaultTokenProviders();
 
             
             

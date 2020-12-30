@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using practicacalificada4.Models;
 
 namespace practicacalificada4.Data
 {
-    public class UsuarioContext : DbContext
+    public class UsuarioContext :  IdentityDbContext
     {
         public DbSet<Usuario> Usuarios{get;set;}
 

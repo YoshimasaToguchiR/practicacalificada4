@@ -16,6 +16,7 @@ namespace practicacalificada4.Models
         [EmailAddress]
         public string Correo{get;set;}
 
+        [Required]
         public string Contraseña{get;set;}
 
 
@@ -25,7 +26,7 @@ namespace practicacalificada4.Models
         public Fail Fails { get; set; }
 
 
-        
+
         public int? FailId { get; set; }
 
     }
