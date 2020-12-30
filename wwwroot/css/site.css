@@ -69,3 +69,65 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.grid {
+	position: relative;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 0.5s linear 1s;
+
+}
+
+.grid.imagenes-cargadas {
+	opacity: 1;
+}
+
+.grid .item{
+	position: absolute;
+	display: block;
+	padding: 0;
+	margin: 10px;
+	width: calc(33.333333333% - 20px);
+}
+
+.grid .item img{
+	width: 100%;
+	cursor: pointer;
+	vertical-align: top;
+
+}
+
+.grid .item-contenido{
+	position: relative;
+
+} .grid {
+	position: relative;
+	width: 100%;
+	opacity: 0;
+	transition: opacity 0.5s linear 1s;
+
+}
+
+.grid.imagenes-cargadas {
+	opacity: 1;
+}
+
+.grid .item{
+	position: absolute;
+	display: block;
+	padding: 0;
+	margin: 10px;
+	width: calc(33.333333333% - 20px);
+}
+
+.grid .item img{
+	width: 100%;
+	cursor: pointer;
+	vertical-align: top;
+
+}
+
+.grid .item-contenido{
+	position: relative;
+
+}

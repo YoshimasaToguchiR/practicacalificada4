@@ -23,7 +23,7 @@ namespace practicacalificada4.Models
 
 
 
-        public Fail Fails { get; set; }
+        public Fail Fail { get; set; }
 
 
 

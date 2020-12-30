@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Peru Fails</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PeruFails</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,12 +21,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        
+                        @if (User.Identity.IsAuthenticated){
+                            <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Gestion" asp-action="ListaFails">Lista Fails</a>
                         </li>
                          <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Gestion" asp-action="RegistrarFail">Registrar Fail</a>
                         </li>
+                            <li class="nav-item">
+                                <a href="nav-link text-dark">Hola </a>
+                            </li>
+                        }else{
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="Registro">Registrarse</a>
+                        </li>
+
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="Login">Iniciar Sesion</a>
+                        </li>
+                        }
                          
 
                         
